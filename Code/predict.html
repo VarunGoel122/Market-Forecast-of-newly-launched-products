@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="template/test.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+	* {
+    		box-sizing: border-box;
+	}
+	.column {
+    		float: left;
+    		width: 33.33%;
+    		padding: 10px;
+    		height: 1000px; /* Should be removed. Only for demonstration */
+	}
+
+	.row:after {
+    		content: "";
+    		display: table;
+    		clear: both;
+	}
+.slider {
+    -webkit-appearance: none;
+    width: 10%;
+    height: 10px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+	</style>
+    <title>Predict</title>
+</head>
+<body>
+<h3> Enter some features of your product :
+</h3>
+            </br>
+        <p>
+            <form action="/pre" method="POST">
+				<br><br>Technology Name: <input type= "text"></br></br>
+                Economic profitability is an advantage of using this technology : <input type="range" min="1" max="7" value="1" class="slider" id="EcoRange" name="EcoRange" method="POST" action="/">
+						<span id="one" ></span>
+                <script>
+							var slider = document.getElementById("EcoRange");
+							var output = document.getElementById("one");
+							output.innerHTML = slider.value;
+
+							slider.oninput = function() {
+							  output.innerHTML = this.value;
+							}
+						</script></br></br>
+             Low initial cost is an advantage of using this technology : <input type="range" min="1" max="7" value="1" class="slider" id="LowRange" name="LowRange" method="POST" action="/">
+						<span id="two" ></span>
+                <script>
+							var slider2 = document.getElementById("LowRange");
+							var output2 = document.getElementById("two");
+							output2.innerHTML = slider2.value;
+
+							slider2.oninput = function() {
+							  output2.innerHTML = this.value;
+							}
+						</script></br></br>
+                Decrease in some kind of discomfort is an advantage of using this technology: <input type="range" min="1" max="7" value="1" class="slider" id="DecRange" name="DecRange" method="POST" action="/">
+						<span id="three" ></span>
+                <script>
+							var slider3 = document.getElementById("DecRange");
+							var output3 = document.getElementById("three");
+							output3.innerHTML = slider3.value;
+
+							slider3.oninput = function() {
+							  output3.innerHTML = this.value;
+							}
+						</script></br></br>
+            Use this technology advances the social prestige of the user: <input type="range" min="0" max="7" value="0" class="slider" id="SaveRange" name="SaveRange" method="POST" action="/">
+						<span id="four" ></span>
+                <script>
+							var slider4 = document.getElementById("SaveRange");
+							var output4 = document.getElementById("four");
+							output4.innerHTML = slider4.value;
+
+							slider4.oninput = function() {
+							  output4.innerHTML = this.value;
+							}
+						</script></br></br>
+           Saving of time and/or effort is an advantage of using this technology:<input type="range" min="1" max="7" value="1" class="slider" id="BenRange" name="BenRange" method="POST" action="/">
+						<span id="five" ></span>
+                <script>
+							var slider5 = document.getElementById("BenRange");
+							var output5 = document.getElementById("five");
+							output5.innerHTML = slider5.value;
+
+							slider5.oninput = function() {
+							  output5.innerHTML = this.value;
+							}
+						</script></br></br>
+            The benefits of using this technology are immediate and that is an advantage of using this technology :<input type="range" min="1" max="7" value="1" class="slider" id="UseRange" name="UseRange" method="POST" action="/">
+						<span id="six" ></span>
+                <script>
+							var slider6 = document.getElementById("UseRange");
+							var output6 = document.getElementById("six");
+							output6.innerHTML = slider6.value;
+
+							slider6.oninput = function() {
+							  output6.innerHTML = this.value;
+							}
+						</script></br></br>
+            The use of this technology is compatible with social/cultural values and beliefs:<input type="range" min="1" max="7" value="1" class="slider" id="IdeaRange" name="IdeaRange" method="POST" action="/">
+						<span id="seven" ></span>
+                <script>
+							var slider7 = document.getElementById("IdeaRange");
+							var output7 = document.getElementById("seven");
+							output7.innerHTML = slider7.value;
+
+							slider7.oninput = function() {
+							  output7.innerHTML = this.value;
+							}
+						</script></br></br>
+           The use of this technology is compatible with previously introduced ideas: <input type="range" min="1" max="7" value="1" class="slider" id="ClientRange" name="ClientRange" method="POST" action="/">
+						<span id="eight" ></span>
+                <script>
+							var slider8 = document.getElementById("ClientRange");
+							var output8 = document.getElementById("eight");
+							output8.innerHTML = slider8.value;
+
+							slider8.oninput = function() {
+							  output8.innerHTML = this.value;
+							}
+						</script></br></br>
+              The use of this technology is positioned as compatible with client needs: <input type="range" min="1" max="7" value="1" class="slider" id="NeedRange" name="NeedRange" method="POST" action="/">
+						<span id="nine" ></span>
+                <script>
+							var slider9 = document.getElementById("NeedRange");
+							var output9 = document.getElementById("nine");
+							output9.innerHTML = slider9.value;
+
+							slider9.oninput = function() {
+							  output9.innerHTML = this.value;
+							}
+						</script></br></br>
+            The technology is perceived by potential users as easy: <input type="range" min="1" max="7" value="1" class="slider" id="PotRange" name="PotRange" method="POST" action="/">
+						<span id="ten" ></span>
+                <script>
+							var slider10 = document.getElementById("PotRange");
+							var output10 = document.getElementById("ten");
+							output10.innerHTML = slider10.value;
+
+							slider10.oninput = function() {
+							  output10.innerHTML = this.value;
+							}
+						</script></br></br>
+            There are mechanisms like free downloads,trial versions or prototypes that enable the users to try this technology easily: <input type="range" min="1" max="7" value="1" class="slider" id="MechRange" name="MechRange" method="POST" action="/">
+						<span id="eleven" ></span>
+                <script>
+							var slider11 = document.getElementById("MechRange");
+							var output11 = document.getElementById("eleven");
+							output11.innerHTML = slider11.value;
+
+							slider11.oninput = function() {
+							  output11.innerHTML = this.value;
+							}
+						</script></br></br>
+            The results and benefits of this technology is easily visible by potential users:   <input type="range" min="1" max="7" value="1" class="slider" id="ResRange" name="ResRange" method="POST" action="/">
+						<span id="twelve" ></span>
+                <script>
+							var slider12 = document.getElementById("ResRange");
+							var output12 = document.getElementById("twelve");
+							output12.innerHTML = slider12.value;
+
+							slider12.oninput = function() {
+							  output12.innerHTML = this.value;
+							}
+						</script></br></br>
+            Degree of novelty :   <select name= novel method="POST" action="/">
+				 <option selected value="1">This technology already exists in the market, it is just new for my company</option>
+                <option value="3">This technology somewhat exists in the market</option>
+                <option value="9">This technology is a completely new innovation</option>
+				</select> </br></br>
+                <input type="submit" name= "form" value="Predict" style="float:right" />
+            </form>
+    </p>
+</body>
+</html>

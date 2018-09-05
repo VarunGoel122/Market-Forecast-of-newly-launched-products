@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="template/test.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<style>
+	* {
+    		box-sizing: border-box;
+	}
+	.column {
+    		float: left;
+    		width: 33.33%;
+    		padding:20px;
+			padding-top:40px;
+			padding-bottom:40px;
+	}
+
+	.row:after {
+    		content: "";
+    		display: table;
+    		clear: both;
+	}
+.slider {
+    -webkit-appearance: none;
+    width: 50%;
+    height: 10px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+	</style>
+        <title>
+            Market Forecast
+        </title>
+    </head>
+    <body style="background:#0087c7;font-family: 'Roboto', sans-serif;
+">
+	<div class="row" >
+  	<div class="column" style="background:#0087c7;">
+	<h1 style="color:white; text-align:"center" ">Market Forecast</h1>
+	</div>
+	<div class="row">
+  	<div class="column" style="background:#fff; opacity:0.85;">
+        <h3>
+            Enter Some Basic Configurations :
+        </h3></br></br></br></br>
+        <p>
+            <form action="/hello" method="POST">
+                Battery Life :	<select name= Battery_Life method="POST" action="/">
+				 <option selected>4</option>
+                <option>5</option>
+                <option>6</option>
+				</select> ampHrs </br></br>
+                Bundled Applications :	<input type="radio" name="Bundled_Applications" value="1" checked> Yes
+  				        				<input type="radio" name="Bundled_Applications" value="0"> No<br/></br>
+		HD Size :<input type="range" min="40" max="600" value="40" class="slider" id="HDRange" name="HD_Size" method="POST" action="/">
+						<span id="demo" ></span>
+						<script>
+							var slider = document.getElementById("HDRange");
+							var output = document.getElementById("demo");
+							output.innerHTML = slider.value;
+
+							slider.oninput = function() {
+							  output.innerHTML = this.value;
+							}
+						</script> GB
+						<br/></br>
+		Integrated Wireless:   <input type="radio" name="Integrated_Wireless" value="1" checked> Yes
+  				       			<input type="radio" name="Integrated_Wireless" value="0"> No<br/></br>
+		Processor Speed :   <select name= Processor_Speeds method="POST" action="/hello">
+				     <option selected>1.5</option>
+					<option>2</option>
+				 </select> GHz </br></br>
+		RAM :	<select name=Ram method="POST" action="/">
+				<option selected>6</option>>
+			 	<option>5</option>
+                <option>4</option>
+                <option>3</option>
+                <option>2</option>
+                <option>1</option>
+		     </select> GB </br></br>
+	        Retail Price :<input type="range" min="300" max="700" value="300" class="slider" id="RetailRange" name="Retail_Price" method="POST" action="/">
+						<span id="demo2" ></span>
+						<script>
+							var slider1 = document.getElementById("RetailRange");
+							var output1 = document.getElementById("demo2");
+							output1.innerHTML = slider1.value;
+
+							slider1.oninput = function() {
+							  output1.innerHTML = this.value;
+							}
+						</script> USD </br></br>
+		Screen Size :	<select name= Screen_Size method="POST" action="/">
+			 <option selected>13</option>
+                <option>14</option>
+                <option>15</option>
+			</select> Inches </br></br></br></br>
+                <input type="submit" name= "form" value="Next" style="float:right" />
+            </form>
+        </p>
+	</div>
+	<div class="row">
+	
+		</div>
+	</div>
+	</div>
+	</div>
+    </body>
+</html>
